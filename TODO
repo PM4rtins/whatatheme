@@ -1,0 +1,31 @@
+TODO: configure '_data/projects.yml':
+
+    - define a title for each project page;
+    - define an image for each project page;
+    - create or refine a 'project' template.
+
+TODO: Write three entries into '/_posts': 
+
+    'On the topic of Transcendence', 
+    'The efficiency of the Human Machine', 
+    'Slop: a personal affair'
+ 
+TODO: review .html files in the '_includes' folder:
+
+    - remove unecessary/undesired liquid statements.
+    - ensure compatibility for new additions.
+
+TODO: reveiw the .html files included in '_layouts':
+    - ensure each of the layouts are compatible  with the desired outcome;
+    - ensure each layout has the features and functions required from it.
+    - findout more about "compress.html"
+
+TODO: Configure assets correctly:
+    - store all images in 'assets/images';
+    - adopt naming schema for images and or other assets;
+    - store metadata related to credits in a centralized metadata file
+
+
+TODO: Centralize direct to render markdown file storage
+
+TODO: review gitignore rules.

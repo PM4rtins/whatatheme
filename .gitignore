@@ -21,6 +21,10 @@ _site/
 /test/version_tmp/
 /tmp/
 
+### Image Asset Management ###
+assets/images/*
+!assets/images/published/
+
 # Used by dotenv library to load environment variables.
 # .env
 
