@@ -1,0 +1,49 @@
+@use 'abstracts/variables' as *;
+
+// Footer Section
+#footer {
+
+    // Black with white letters, justified.
+    background-color: $default-white;
+    color: $default-black;
+    text-align: center;
+
+    // Set the anchor element in its own inline-block
+    /*
+            This selector is fragile but elegant, it works because there is only 
+        one anchor element outside of the main container.
+    */
+    a:not(.column a) {
+        display:inline-block;
+        margin-bottom: 1rem;
+    }
+
+    // Make the columns container black, with white letters and some padding 
+    .container {
+        background-color: $default-black;
+        color: $default-white;
+        padding: 1rem 0;
+    }
+
+    // Justify the text in column containers
+    .column { 
+        text-align: justify;
+    }
+
+    .column h4,
+    .column li { // indent paragraph containers
+        padding-left: 5rem;
+    }
+
+    // Set padding
+    >div:last-child {
+        padding: 0.75rem;
+        font-size: 0.88rem;
+
+        a {
+            text-decoration: underline;
+            font-weight: bold;
+            color: $credits-indigo;
+        }
+    }
+}

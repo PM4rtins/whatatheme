@@ -1,0 +1,48 @@
+<!-- 
+    Footer component - Includes hyperlink references for sitemap, subscription
+    and recent publications.  
+ -->
+<footer id="footer">
+    
+    <!-- Back To Top button-->
+    <a class="btn" onclick="window.scroll(0,0)">BACK TO TOP</a>
+
+    <!-- Container for the Footer content-->
+    <div class="container columns">
+
+            <!-- Sitemap for Robot parsing-->
+            <div class="column no-top is-one-third">
+                <h4 class="ttl4">Sitemap</h4>
+                <li>
+                    <a href="{{ '/sitemap.xml' | relative_url }}">...robots go here</a>
+                </li>
+            </div>
+
+            <!-- Subsctiption -->
+            <div class="column no-top is-one-third">
+                <h4 class="ttl4">Subscribe to the Feed</h4>
+                <li>
+                    <a target="_blank" href="{{ site.url }}{{ '/feed.xml' | relative_url }}">...via RSS</a>
+                </li>
+                <li>
+                    <a target="_blank" href="{{ site.url }}{{ '/feed.xml' | relative_url }}">...via Newsletter</a>
+                </li>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="column no-top is-one-third">
+                <h4 class="ttl4">Recent Posts</h4>
+                {% include components/get-recent.html %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Website Credits and Copyright -->
+    <div id="credits">
+        <i class="far fa-copyright"></i> {{ "now" | date: "%Y" }} |
+        <a href="https://github.com/PM4RTINS" target="_blank" rel="noopener noreferrer">© PM4RTINS</a>
+        - Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages,</a>
+        powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>
+    </div>
+
+</footer>

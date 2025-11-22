@@ -1,0 +1,65 @@
+
+
+.card {
+    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #dbdbd7bb;
+    border-radius: 0.5rem;
+    border: solid 2px black;
+    padding: 1rem;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.2);
+
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    background: 0.3 ease;
+
+    img {
+        width: 100%;
+        border-radius: 0.25rem;
+    }
+
+    h3 {
+        margin: 0.5rem 0 0.25rem;
+        color: white;
+
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: white;
+    }
+
+    &:hover {
+        background: #fffdea;
+        box-shadow: 0 0 10px 2.5px #b9f0ff;
+        border-color: #f5f4f0;
+        transform: scale(1.02);
+        opacity: 1;
+        z-index: 50;
+
+        p {
+            color: black;
+            transition: color 1.2s ease;
+        }
+
+        h3 {
+            color: black;
+            font-weight: semibold;
+            transition: all 1.2s ease;
+        }
+
+        img {
+            transform: scale(1.07);
+            transition: transform 0.3s ease;
+        }
+
+    }
+}

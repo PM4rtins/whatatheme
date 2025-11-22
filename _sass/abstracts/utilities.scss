@@ -1,0 +1,109 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
+
+// If is focusable
+.is-focusable {
+    &:focus {
+        // On focus outline with current color.
+        outline: 2rem solid currentColor;
+    }
+}
+
+// If element is hoverable,
+.is-hoverable {
+
+    // Standard transition for all effects
+    transition: all 0.3s ease-in-out;
+
+    &:hover { // On hover
+
+        &.invert { // if then invert the color,
+            filter: invert(1);
+        }
+
+        &.as-link { // if then color blue
+            color: var.$link-blue;
+        }
+
+        &.enlarge{ // if then enlarge element
+            transform: scale(1.05);
+        }
+
+        // Apply transition to all direct children of relevant classes
+        &.enlarge-child-text>*,
+        &.enlarge-child-icon>* {
+            transition: 
+                all .3s ease-out;
+        }
+
+        &.enlarge-child-text>span { // if then make child text semibold when parent hovered
+            font-weight: 600 !important;
+        }
+
+        &.enlarge-child-text>p {
+            // if then make child text semibold when parent hovered
+            font-weight: 600 !important;
+        }
+        
+        &.enlarge-child-icon>svg { // if then make child sprite grow when parent hovered
+            transform: scale(1.25);
+        }
+    }
+}
+
+// List of elements that can be styled with frostlikes
+$frostable-elements: a, button;
+
+@each $el in $frostable-elements {
+    
+    #{$el} .is-iced {
+        backdrop-filter: blur(2px);
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 247, 220, 0.709),
+            rgba(117, 117, 117, 0.6)
+        );
+    }
+
+    #{$el}.is-frosted {
+        color: currentColor;
+        backdrop-filter: blur(2px);
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.05),
+            rgba(0, 0, 0, 0.1)
+        );
+    }
+}
+
+
+// SHadow effects
+/*
+    TODO: DEFINE IN MORE DETAIL EACH OF THE SHADOW VARIANTS
+*/
+
+// List of elements that can be styled with a shadow
+$shadowed-elements: a, button;
+
+// This short-hand defines the styles below for each of the elements above.
+@each $el in $shadowed-elements {
+    #{$el}.has-shadow-normal {
+        @include mix.multi-layer-effects(var.$box-shadow-normal...);
+    }
+    #{$el}.has-shadow-large {
+        @include mix.multi-layer-effects(var.$box-shadow-large...);
+    }
+    .has-shadow-none {
+        @include mix.multi-layer-effects(var.$box-shadow-none...);
+    }
+}
+
+
+.highlight {
+    background-color: rgba(30, 30, 30, 0.425);
+    border-radius: 0.2rem;
+}
+
+
+// TK consider creating named sections using /* C style comments*/ for 
+// the different types of utilities

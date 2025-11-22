@@ -1,0 +1,31 @@
+---
+
+---
+
+<!-- 
+  Home page layout - Injects all other modules using the nested includes pattern.  
+-->
+
+<!DOCTYPE html>
+<html>
+
+{% include components/head.html %}
+    
+
+<body>
+
+  {% include components/navbar.html %}
+  {% include sprites.svg %}
+  {% include home/landing.html %}
+  {% include home/about.html %}
+  {% include home/carousel.html %}
+
+  <section id="contact">
+    {% include components/contact.html %}
+  </section>
+
+  {% include components/footer.html %}
+  {% include home/scripts.html %}
+
+</body>
+</html>

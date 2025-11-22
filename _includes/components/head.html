@@ -1,0 +1,20 @@
+<!-- 
+    Head component - Includes metadata components, site title, stylesheet and
+    favicon.
+-->
+<head>
+    <!-- Meta-components -->
+    {% include meta-components/basic.html %}
+    {% include meta-components/preview.html %}
+    {% include meta-components/google.html %}
+
+    <!-- Website Title -->
+    <title>{{ site.title }}</title>
+
+    <!-- Main Stylesheet - All other style sheets are ingested through it -->
+    <link rel="stylesheet" href="{{ site.style | relative_url }}">
+
+    <!-- Browser Tab Favicon -->
+    <link rel="shortcut icon" href="{{ site.favicon32 | relative_url }}" type="image/x-icon">
+    
+</head>

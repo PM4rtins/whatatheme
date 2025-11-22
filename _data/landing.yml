@@ -1,0 +1,19 @@
+# =========================================================
+# LANDING SECTIONS (HEROES)
+# =========================================================
+
+home:
+  image: /assets/img/heroes/home-landing.webp
+  title: Paulo Martins
+  subtitle: ... go instead where there is no path and leave a trail
+  btn: Find out more
+
+blog:
+  image: /assets/img/heroes/blog-landing.webp
+  title: 
+  subtitle: ... like stars, ideas have their own light
+
+projects:
+  image: /assets/img/heroes/projects-landing.webp
+  title: Projects
+  subtitle: ... step forth into the light of things

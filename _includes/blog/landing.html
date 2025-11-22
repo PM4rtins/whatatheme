@@ -1,0 +1,41 @@
+<section class="hero has-text-white has-text-centered" id="blog-hub">
+    <div class="bg fullwidth"></div>
+    <div class="grid-container">
+        <div class="grid-cell is-one-third top"></div>
+        <div class="grid-cell is-one-third"></div>
+        <div class="grid-cell is-one-third has-text-centered"></div>
+        <div class="grid-cell is-one-third centered">
+            <h3 class="subttl3">
+                ... step forth into the light of things
+            </h3>
+        </div>
+        <div class="grid-cell is-two-thirds centered-right">
+            <div class="info-box">
+                <h3 class="subttl3">Blog</h3>
+                <div class="button-group">
+                    <button class="dropdwn-btn list-view">List View</button>
+                    <button class="dropdwn-btn card-view">Card View</button>
+
+                    <div class="dropdwn-menu list-view-menu">
+                        {% for post in site.blog %}
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        {% endfor %}
+                    </div>
+
+                    <div class="dropdwn-menu card-view-menu">
+                        {% for post in site.blog %}
+                        <a href="{{ post.url | relative_url }}" class="card">
+                            <img src="{{ post.image }}" alt="{{ post.title }}">
+                            <div class="card-content">
+                                <h3>{{ post.title }}</h3>
+                                <p>{{ post.short-description | truncate: 100 }}</p>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

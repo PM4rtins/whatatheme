@@ -1,0 +1,39 @@
+/// RESET
+/// 
+/// This file concerns itself with overriding the styles browsers default to
+/// or the opinionated styles that the projects vendors impose.
+///
+@use 'abstracts/variables' as *;
+
+// Reset the values of several Bulma classes using variables defined in variables.
+.has-text-white {
+    color: $default-white;
+}
+
+.has-background-black {
+    background-color: $default-black;
+}
+
+.has-background-white {
+    background-color: $default-white;
+}
+
+.has-text-link {
+    color: $link-blue;
+}
+.is-link {
+    background-color: $highlight-purple;
+}
+
+.button.is-focused,
+.button:focus {
+    border-color: none;
+    color: none;
+
+    &.focus-light {
+        border-color: $default-white
+    }
+    &.focus-dark {
+        color: $default-black
+    }
+}

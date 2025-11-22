@@ -1,0 +1,8 @@
+<!-- 
+    Schema.org tags - enables SEO, scraping and search engine discovery. 
+-->
+<meta itemprop="name" content="{{site.title}}{% if page.title %} | {{page.title}}{% endif %}">
+<meta itemprop="description"
+    content="{% unless page.layout == 'post' %}{{site.description}}{% else %}{{page.description}}{% endunless %}">
+<meta itemprop="image"
+    content="{% unless page.layout == 'post' %}{{site.site-image}}{% else %}{{page.post-image}}{% endunless %}">

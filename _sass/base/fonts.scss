@@ -1,0 +1,10 @@
+/// FONTS 
+/// 
+/// This style sheet is concerned with defining the typeface and corresponding 
+/// fonts to be used in the project.
+
+@use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
+
+
+@include mix.font-face-generator(var.$typeface, var.$fonts);

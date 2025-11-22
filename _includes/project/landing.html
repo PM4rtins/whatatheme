@@ -1,0 +1,46 @@
+<section class="hero is-fullheight has-text-white has-text-centered" id="project-hub">
+    <div class="bg fullwidth"></div>
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-multiline is-gapless grid-container">
+                <div class="column is-one-third grid-cell top">
+                </div>
+                <div class="column is-one-third grid-cell"></div>
+                <div class="column is-one-third grid-cell has-text-centered"></div>
+                <div class="column is-one-third grid-cell centered">
+                    <h3 class="subttl3">
+                        ... like stars, ideas have a light of their own 
+                    </h3>
+                </div>
+                <div class="column is-two-thirds grid-cell centered-right">
+                    <div class="info-box">
+                        <h3 class="subttl3">Projects</h3>
+                        <div class="button-group">
+                            <button class="dropdwn-btn list-view">List View</button>
+                            <button class="dropdwn-btn card-view">Card View</button>
+
+                            <div class="dropdwn-menu list-view-menu">
+                                {% for project in site.projects %}
+                                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+                                {% endfor %}
+                            </div>
+
+                            <div class="dropdwn-menu card-view-menu">
+                                {% for project in site.projects %}
+                                <a href="{{ project.url | relative_url }}" class="card">
+                                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                                    <div class="card-content">
+                                        <h3>{{ project.title }}</h3>
+                                        <p>{{ project.description | truncate: 100 }}</p>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

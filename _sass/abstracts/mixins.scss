@@ -1,0 +1,182 @@
+/// MIXINS
+/// 
+/// This file hosts all of the mixins for this project. The variables used in 
+/// each of them are by default in abstracts/variables.scss.
+///
+/*
+    Bulma classes are necessary because they are extended in the mixins.
+*/
+@use 'vendor/bulma';
+@use 'vendor/bulma-carousel';
+
+// Font generator using the Poppins typeface
+/*
+    This font generator takes the poppins typeface '.ttf' files, and a tuple 
+    declaration to generate all of the fonts required for the project.
+*/
+@mixin font-face-generator(
+
+    $typeface, 
+    $list
+    
+    ) {
+    
+    @each $weight, $style, $file in $list {
+        @font-face {
+            font-family: $typeface;
+            font-weight: $weight;
+            font-style: $style;
+            src: 
+                url('/assets/fonts/#{$typeface}/#{$file}') 
+                format('truetype')
+            ;
+        }
+    }
+}
+
+// Font styler generator
+/*
+    This mixin takes in a type, a bulma size class, a font weight, a decoration
+    and an alignment, and spits out the css elements with classes in the call
+    signature. The call signatures are declared in the variables.
+*/
+@mixin font-styler(
+    
+    $type: null, 
+    $size: null, 
+    $weight: null, 
+    $decoration: null, 
+    $align: null,
+    $capitalize: false
+
+    ) {
+
+    @if $type !=null {
+        @if $type =='title' {
+            @extend .title;
+        }
+
+        @else if $type =='subtitle' {
+            @extend .subtitle;
+        }
+    }
+
+    @if $size !=null {
+        @extend .#{'is-size-' + $size};
+    }
+
+    @if $weight !=null {
+        @extend .#{'has-text-weight-' + $weight};
+    }
+
+    @if $align !=null {
+        @extend .#{'has-text-' + $align};
+    }
+
+    @if $decoration !=null {
+        text-decoration: $decoration;
+    }
+
+    @if $capitalize == true {
+        text-transform: uppercase;
+    }
+
+    // Always ensure color is applied
+    color: currentColor
+}
+
+
+// Multi-layer Shadow generator
+/*
+        Produces a compound shadow with adjustable blur and offsets, with the 
+    first two layers: inset highlights and lowlights for depth. The third layer 
+    being the  outer drop shadow based on vertical offset. In the active state 
+    there is an increased inset offsets and blur that mimic compression (press-
+    depth sets vertical shift on press.
+    
+*/
+
+@mixin multi-layer-effects(
+
+    $shadow-offset-x: 0,
+    $shadow-offset-y: 3,
+    $shadow-size: 15,
+    $shadow: rgba(0, 0, 0, 0.25),
+    $inset-offset-x: 1px,
+    $inset-offset-y: 1px,
+    $inset-size: 2px, // null → no inset
+    $press-depth: 3px,
+    $highlight: rgba(255, 255, 255, 0.6),
+    $lowlight: rgba(255, 255, 255, 0.2),
+    $opacify-by: 0.2
+
+) {
+
+    // Inner highlight + inner lowlight + outer shadow
+    @if $shadow-size != null {
+        @if $inset-size == null {
+            box-shadow:
+                $shadow-offset-x
+                $shadow-offset-y
+                $shadow-size
+                $shadow;
+        } @else {
+            box-shadow:
+
+                inset // highlight
+                    $inset-offset-x 
+                    $inset-offset-y 
+                    $inset-size 
+                    $highlight, 
+
+                inset // lowlight
+                    (-$inset-offset-x) 
+                    (-$inset-offset-y) 
+                    $inset-size 
+                    $lowlight, 
+
+                // shadow
+                    $shadow-offset-x
+                    $shadow-offset-y
+                    $shadow-size
+                    $shadow;
+        }
+    } @else {
+        box-shadow: none;
+    }
+
+    &:active {
+
+        // Stronger inset shadows to simulate press
+        @if $shadow-size != null {
+            @if $inset-size == null {
+                box-shadow:
+                    $shadow-offset-x
+                    $shadow-offset-y
+                    $shadow-size
+                    $shadow;
+            } @else {
+                box-shadow:
+
+                    inset 
+                        ($inset-offset-x * 2) 
+                        ($inset-offset-y * 2) 
+                        ($inset-size * 2) 
+                        opacify($highlight, $opacify-by)
+                    ,
+                    inset 
+                        (-$inset-offset-x * 2) 
+                        (-$inset-offset-y * 2) 
+                        ($inset-size * 2) 
+                        opacify($lowlight, $opacify-by)
+                ;
+            }
+        } @else {
+            box-shadow: none;
+        }
+
+        transform: translateY($press-depth); // physical press shift
+    }
+}
+
+@mixin empty() {}

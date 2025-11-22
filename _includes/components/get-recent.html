@@ -1,0 +1,17 @@
+{%- assign combined = site.projects | concat: site.blog -%}
+{%- assign sorted = combined | sort: 'date' | reverse -%}
+{%- assign recent10 = sorted | slice: 0,10 -%}
+{%- assign random3 = recent10 | sample: 3 -%}
+
+{%- for post in random3 -%}
+<li>
+    <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+    </a>
+    (
+        {% if post.collection == "blog" %} post
+        {% elsif post.collection == "projects" %} project
+        {% endif %}
+    )
+</li>
+{%- endfor -%}

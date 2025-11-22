@@ -1,0 +1,22 @@
+.carousel {
+    
+    padding-bottom: 65px;
+    margin: 25px auto 35px auto;
+    overflow: hidden;
+    z-index: 1;
+
+    width: 95%;
+    height: 465px;
+    
+    .slider-pagination {
+        z-index: 10;
+    }
+    
+    &.hidden {
+        display: none;
+    }
+
+    &:not(.hidden) {
+        display: block;
+    }
+}

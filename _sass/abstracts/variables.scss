@@ -1,0 +1,98 @@
+/// Variable declaration
+///
+/// This file is responsible for hosting all of the variables defined in this 
+/// project. Any variable used anywhere exists here and is "used" via the 
+/// "var" namespace.
+///  
+/// e.g.
+/// <write>@use 'abstracts/variables' as var;
+/// <then call>"var.$typeface" <to referance this files typeface variable>.
+/// 
+// Typeface variables
+$typeface: 'Poppins';
+$typeface-category: sans-serif;
+
+// Font variants: (weight, style, filename)
+$fonts: (
+    (100, normal, '#{$typeface}-Thin.ttf'),
+    (100, italic, '#{$typeface}-ThinItalic.ttf'),
+    (200, normal, '#{$typeface}-ExtraLight.ttf'),
+    (200, italic, '#{$typeface}-ExtraLightItalic.ttf'),
+    (300, normal, '#{$typeface}-Light.ttf'),
+    (300, italic, '#{$typeface}-LightItalic.ttf'),
+    (400, normal, '#{$typeface}-Regular.ttf'),
+    (400, italic, '#{$typeface}-Italic.ttf'),
+    (500, normal, '#{$typeface}-Medium.ttf'),
+    (500, italic, '#{$typeface}-MediumItalic.ttf'),
+    (600, normal, '#{$typeface}-SemiBold.ttf'),
+    (600, italic, '#{$typeface}-SemiBoldItalic.ttf'),
+    (700, normal, '#{$typeface}-Bold.ttf'),
+    (700, italic, '#{$typeface}-BoldItalic.ttf'),
+    (800, normal, '#{$typeface}-ExtraBold.ttf'),
+    (800, italic, '#{$typeface}-ExtraBoldItalic.ttf'),
+    (900, normal, '#{$typeface}-Black.ttf'),
+    (900, italic, '#{$typeface}-BlackItalic.ttf')
+);
+
+// List of heading options (element, class, type, weight, decoration, align)
+$headings: (
+    (h1, ttl1, title, 1, bold, underline, centered, true),
+    (h3, ttl3, title, 3, normal, null, centered, true),
+    (h3, ttl3-underline, title, 3, semibold, underline, centered, true),
+    (h4, ttl4, title, 6, normal, null, centered, true)
+);
+
+// List of text options (element, class, type, weight, decoration, align)
+$text-variants: (
+    (p, button-text-large, null, 3, semibold, none, centered, true),
+    (p, button-text-normal, null, 6, semibold, none, centered, true),
+    (p, text-box-normal, null, 6, normal, none, justified, false),
+    (p, nav-text, null, 5, normal, none, justified, false),
+);
+
+// Base color definitions
+$default-white: #e4dfd0;  // the color used as white in this project
+$default-black: #000000;  // the color used as black in this project
+$link-blue: #1b35dd;
+$credits-indigo: #3333ee;      // the color used for links in this project
+$highlight-purple:#332266;// the color used for highlights in this project
+
+
+// Base shadows rgba values
+$base-highlight:rgba(255, 255, 255, 0.6);
+$base-lowlight: rgba(255, 255, 255, 0.2);
+$base-shadow: rgba(0, 0, 0, 0.25);
+
+// Standard shadows
+$box-shadow-normal: (
+    inset-offset-x: 1px,
+    inset-offset-y: 1px,
+    inset-size: 2px,
+    highlight: $base-highlight,
+    lowlight: $base-lowlight,
+    opacify-by: 0.2,
+    shadow-offset-x: 0,
+    shadow-offset-y: 3px,
+    shadow-size: 15px,
+    shadow: $base-shadow,
+    press-depth: 3px,
+);
+
+$box-shadow-large: (
+    inset-offset-x: 1px,
+    inset-offset-y: 1px,
+    inset-size: 2px,
+    highlight: $base-highlight,
+    lowlight: $base-lowlight,
+    opacify-by: 0.2,
+    shadow-offset-x: 0,
+    shadow-offset-y: 3px,
+    shadow-size: 35px,
+    shadow: $base-shadow,
+    press-depth: 3px,
+);
+
+$box-shadow-none: (
+    shadow-size: null,
+    press-depth: 3px,
+);

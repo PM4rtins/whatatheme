@@ -1,0 +1,63 @@
+# =========================================================
+# HOME PAGE SECTION DATA
+# =========================================================
+
+about:
+  website:
+    heading: My Website
+    short: Website for professional portfolio and personal bloging
+    long: >
+      This digital space was crafted with - you - the visitor, in mind.<br><br>
+
+        &nbsp;❱ A vehicle for my vision, creative and lateral thought processes, things which 
+        stubbornly refuse to fit within the pages of a standard résumé. <br><br>
+
+        &nbsp;❱ Incidentally it serves as an exposé into "How I think about what I think.", a place as 
+        beautiful and inspiring as I managed to make it.<br><br>
+
+      Feel free to browse. I hope you enjoy<br><br><br>
+  
+  author:
+    name: Paulo Martins
+    image: /assets/img/misc/profile_pic.png
+    heading: About me
+    short: Hi, my name is Paulo, and I like to solve hard problems
+    long: >
+      Hi, my name is Paulo, and I like to solve hard problems.<br><br>
+
+      &nbsp;❱ I hold a BSc in Data Management and am currently attending a graduate 
+      program in Data Science. My studies focus on the application of AI algorithms 
+      in Machine Learning Operations within Big Data contexts. <br><br>
+
+      &nbsp;❱ If that's the kind of problem you need solving, I encourage you to 
+      explore my projects, download my CV, or reach out via the contacts provided.
+      Alternatively, if you simply want to read a stranger's philosophical meanders 
+      check out the blog section.<br><br>
+
+showcase:
+  title: Featured Content
+  projects:
+    image: /assets/img/heroes/showcase-ice.webp
+    btn: Projects
+    description: >
+      Browse my most recent projects.
+
+  blog: 
+    image: /assets/img/heroes/showcase-fire.webp
+    btn: Blog
+    description: >
+      Explore the latest blog entries.
+
+contact:
+  email: testing.mail@mail.com
+  cv: "test.test"
+  
+  social:
+    linkedin: paulorgmartins
+    github: PM4rtins
+    x: test.account
+  
+  message: >
+    For business inquiries or general feedback, contact me via the provided 
+    e-mail. To receive a copy of my CV, click the corresponding button and 
+    complete the form. Check out the links below to find me online.<br><br>

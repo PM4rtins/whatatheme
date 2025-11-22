@@ -1,0 +1,23 @@
+<!-- 
+  Landing page (top of home section) – full-screen view with a background,
+  striking title and description, and a "Find out more" scroll button.
+-->
+
+<section class="hero is-fullheight has-text-white has-text-centered" id="home">
+  <div class="bg parallax"></div>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="ttl1">
+        {{site.data.landing.home.title}}
+      </h1>
+      <h3 class="ttl3">
+        {{site.data.landing.home.subtitle}}
+      </h3>
+      <hr>
+      <a class="as-button is-focusable is-frosted has-shadow-normal is-hoverable invert enlarge-child-text js-scroll to-bottom"
+        data-target="about">
+        <span class> {{site.data.landing.home.btn}}</span>
+      </a>
+    </div>
+  </div>
+</section>

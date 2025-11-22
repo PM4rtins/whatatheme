@@ -1,96 +1,101 @@
-# WhatATheme
+# =========================================================
+# CONFIGURATION INFORMATION
+# =========================================================
+
+# website details
+
+title: Paulo Martins
+url: ""
+baseurl: ""
+site-keywords: personal, porfolio, professional,academia, blog, thought garden
+favicon: favicon.ico
+favicon48: /assets/icons/png/favicon-48.png
+
+# build configuration
 markdown: kramdown
 
-# URL of the Site
-url: ''
-# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
-baseurl: 
-
-# Title of the Site
-title: Paulo Martins
-# Description of the Site
-description: ... go instead where there is no path and leave a trail.
-# URL of Image of the Site
-site-image: /WhatATheme/assets/images/meta.jpg
-# Keywords of the Site
-site-keywords: Site, Template, Theme
-# URL for the Image of custom Favicon
-favicon-url: 
-
-# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: /assets/images/test_3.png
-
-# Social Media and Contact
-# If you don't want to use any icon, you can leave them blank.
-email: /
-facebook_username: /
-twitter_username: /
-instagram_username: /
-linkedin_username: paulorgmartins
-github_username:  PM4rtins
-youtube_channel_id: /
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
-
-# Google Analytics
-google-analytics: /
-
-# Disqus
-disqus-shortname: / 
-
-# Name of the Author
-author-name: Paulo Martins
-# URL for the Image of the Author
-author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
-
-# 60 Words About the Author
-author-about: |
-  Hi there and welcome to my website.
-
-  I imagine that if you’ve made it this far down the rabbit hole, then for one reason or another, you're interested in understanding what makes me tick. This digital space was crafted for my visitors’ professional and personal curiosities alike. Whether you've come with a business inquiry or simply wish to inquire into my mind... please, take your time — you are very much welcome here.
-
-  Use the buttons bellow to navigate the content of this website.
-
-# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://github.com/PM4rtins
-
-# SASS
+style: /assets/css/style.css
 sass:
   sass_dir: _sass
   style: compressed
 
-# Build settings
 plugins:
   - jekyll-admin
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-minifier
 
-# Permalink
-permalink: "blog/:title"
+feed:
+  path: feed.xml
+  excerpt_only: true
 
-# Compress
-compress_html:
-  clippings: all
+jekyll-minifier:
+  preserve_php: true                # Default: false
+  remove_spaces_inside_tags: true   # Default: true
+  remove_multi_spaces: true         # Default: true
+  remove_comments: true             # Default: true
+  remove_intertag_spaces: true      # Default: false
+  remove_quotes: false              # Default: false
+  compress_css: true                # Default: true
+  compress_javascript: true         # Default: true
+  compress_json: true               # Default: true
+  simple_doctype: false             # Default: false
+  remove_script_attributes: false   # Default: false
+  remove_style_attributes: false    # Default: false
+  remove_link_attributes: false     # Default: false
+  remove_form_attributes: false     # Default: false
+  remove_input_attributes: false    # Default: false
+  remove_javascript_protocol: false # Default: false
+  remove_http_protocol: false       # Default: false
+  remove_https_protocol: false      # Default: false
+  preserve_line_breaks: false       # Default: false
+  simple_boolean_attributes: false  # Default: false
+  compress_js_templates: false      # Default: false
+  preserve_patterns:                # Default: (empty)
+  terser_args:                      # Default: (empty)
 
-# Defaults
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+  blog:
+    output: true
+    permalink: /blog/:title/
+
 defaults:
-  -
-    scope:
-      type: 'posts'
+  - scope:
+      path: "_blog"
+      type: "blog"
     values:
-      layout: post
+      layout: blog
       post-image: ""
-      description: ""
+      description: |
+        Default blog entry.
       tags:
-        - ""
-  -
-    scope:
-      type: 'pages'
+        - artificial intelligence
+        - machine learning
+        - data science
+        - philosophy
+        - technology
+        - ethics
+        - reflections
+        - commentary
+  - scope:
+      path: "_projects"
+      type: "projects"
     values:
-      layout: page
+      layout: project
+      project-image: ""
+      description: |
+        Default project page entry.
+      tags:
+        - artificial intelligence
+        - machine learning
+        - data science
+        - project
+        - academia
+        - stem
 
-# Exclude
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -102,3 +107,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - .gitignore

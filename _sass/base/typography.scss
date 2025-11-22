@@ -1,0 +1,106 @@
+/// TYPOGRAPHY
+/// 
+/// This page sets the main typographical styling options, such as the main 
+/// typeface for the project, as well as the, font options for several font
+/// related base elements. Like titles, paragraphs and lists.
+/// 
+@use 'abstracts/mixins' as mix;
+@use 'abstracts/variables' as var;
+
+
+// Define the font for the project (poppins, sans-serif)
+html,
+body {
+    font-family: var.$typeface, var.$typeface-category;
+}
+
+::placeholder {
+    font-family: var.$typeface, var.$typeface-category
+}
+
+// Style titles and subtitles
+@each 
+
+    $h, 
+    $cls, 
+    $type, 
+    $size, 
+    $weight, 
+    $decoration, 
+    $align, 
+    $capitalize 
+    
+in var.$headings {
+
+    #{$h}.#{$cls} {
+        @include mix.font-styler(
+            
+            $type, 
+            $size, 
+            $weight, 
+            $decoration, 
+            $align, 
+            $capitalize
+        );
+    }
+}
+
+// Style line-items
+li {
+    color: currentColor;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    &::before{
+        font-weight: bold;
+    }
+
+    list-style: none;
+    position: relative;
+    padding-left: 1em;
+
+    &::before {
+        content: "›"; // Custom bullet
+        left: 0;
+        position: absolute;
+        padding-left: 3rem; // Offset bullet
+    }
+}
+
+// Style paragraphs
+p {
+    text-align: justify;
+
+    &.has-margin-left {
+            margin-left: 1rem;
+        }
+    
+    &.has-margin-right {
+        margin-right: 1rem;
+    }
+}
+
+// Stylr paragraph elements
+@each $h,
+$cls,
+$type,
+$size,
+$weight,
+$decoration,
+$align,
+$capitalize in var.$text-variants {
+
+    #{$h}.#{$cls} {
+        @include mix.font-styler($type,
+            $size,
+            $weight,
+            $decoration,
+            $align,
+            $capitalize );
+    }
+}
+
+hr {
+    border: 1px;
+    color: currentColor !important;
+}

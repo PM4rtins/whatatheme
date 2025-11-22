@@ -1,0 +1,35 @@
+/// ANCHOR ELEMENTS
+/// 
+/// This sheet is responsible for setting the general behaviour of anchor elements
+/// be them part of button-like structure or standalone clickable text.
+
+@use 'abstracts/variables' as var;
+@use 'components/buttons' as *;
+
+// Base anchor element
+a {
+
+    cursor: pointer;
+    text-decoration: none;
+    
+    &.as-link {
+        color: var.$link-blue;
+    }
+
+    &.as-button {
+        @extend .btn;
+    }
+}
+
+// Back to top anchor
+#backtotop {
+
+    // Dimensions
+    width: 150px;
+    padding: 0.25rem;
+    margin: auto auto 1rem auto;
+
+    // Styling
+    background-color: black;
+    color: white;
+}

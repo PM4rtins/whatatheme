@@ -1,0 +1,70 @@
+<!--
+    Carousel section - Double alternate carousel shows blogs and project posts,
+    by means of a toggle button. Cards can be slid via navigation options.
+-->
+
+<section class="has-text-white has-text-centered" id="showcase">
+
+    <!-- Backgrounds -->
+    <div class="bg bg1 boxed parallax" id="bg1"></div>
+    <div class="bg bg2 boxed parallax" id="bg2"></div>
+
+    <div class="container">
+        <div class="columns">
+
+            <!-- Title and message -->
+            <div class="column black-bg is-three-fifths">
+                <h3 class="ttl3">
+                    {{ site.data.home.showcase.title }}
+                </h3>
+                <hr>
+                <p class="text-box-normal" id="showcase-description"></p>
+            </div>
+
+            <!-- Toggle Button  -->
+            <div class="column is-one-fifth">
+                <button class="toggle-btn has-shadow-normal is-frosted is-hoverable invert enlarge-child-text" id="toggleCarousel">
+                    <p class="button-text-large" id="toggleCarousel-text"></p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel 1-->
+    <div class="carousel" id="carousel1">
+
+        <!-- Reads collection data from .yml file-->
+        {% for item in site.projects %}
+        <div class="card {% if forloop.first %}is-active{% endif %}">
+            <div class="card-image">
+                <figure class="img>">
+                    <img src="{{ item.image }}" alt="Slide {{ forloop.index }}">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="nav-text">{{ item.title }}</p>
+                <p class="content">{{ item.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Carousel 2-->
+    <div class="carousel" id="carousel2">
+
+        <!-- Reads collection data from .yml file-->
+        {% for item in site.blog %}
+        <div class="card {% if forloop.first %}is-active{% endif %}">
+            <div class="card-image">
+                <figure class="img>">
+                    <img src="{{ item.image }}" alt="Slide {{ forloop.index }}">
+                </figure>
+            </div>
+            <div class="card-content">
+                <p class="nav-text">{{ item.title }}</p>
+                <p class="content">{{ item.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

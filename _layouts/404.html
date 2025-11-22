@@ -1,30 +1,36 @@
----
-layout: compress
----
-
 <!DOCTYPE html>
 <html>
-{% include head.html %}
+
+{% include components/head.html %}
 
 <body>
-    <section class="hero is-fullheight has-text-centered has-background-black-ter">
+    {% include components/navbar.html %}
+    {% include sprites.svg %}
+
+    <section class="hero is-fullheight is-black" id="notfound">
         <div class="hero-body">
-            <div class="container">
-                <h1 class="title is-1 is-uppercase has-text-weight-bold has-text-white">
+            <div class="container has-text-white has-text-centered">
+                <h1 class="ttl1">
                     {{page.title}}
                 </h1>
-                <h3 class="is-uppercase has-text-weight-medium is-marginless has-text-grey-light">
-                    {{content}}
+                <h3 class="ttl5">
+                    {{page.content}}
                 </h3>
                 <hr>
-                <div class="columns is-marginless is-inline-flex-desktop">
-                    <a href="{{site.url}}{{site.baseurl}}/"
-                        class="button is-white column is-rounded is-outlined is-uppercase has-text-weight-normal">Home</a>
-                    </a>
-                </div>
+                <a href="{{ '' | relative_url}}/" class="btn has-text-white">
+                    Back to Safety
+                </a>
             </div>
         </div>
+        <img src="{{ page.image | relative_url }}" class="bottom-left">
     </section>
+
+    <section id="contact">
+        {% include components/contact.html %}
+    </section>
+
+    {% include components/footer.html %}
+    {% include home/scripts.html %}
 </body>
 
 </html>

@@ -1,0 +1,80 @@
+<!--
+    Navigation bar component - Black navigation bar fixed at the top, with 
+    personal branding elements, and links to website main sections.
+-->
+<nav class="navbar is-black is-fixed-top" id="navbar">
+    <div class="container">
+
+        <!-- 48p Logo -->
+        <div class="navbar-brand">
+            <img src="{{ site.favicon48 | relative_url }}" alt="Logo" style="margin-right: 8px;">
+            <a class="navbar-item" href="{{ '/' | relative_url }}">
+                <p class="nav-text">{{ site.title }}</p>
+            </a>
+
+            <!-- Navigation Burger -->
+            <div class="navbar-burger" data-target="navbar-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <div class="navbar-menu has-background-black" id="navbar-menu">
+            <div class="navbar-end">
+
+                <!-- Internal smooth-scroll links -->
+                <a class="navbar-item" href="{{site.url}}">HOME</a>
+                <a class="navbar-item" href="{{site.url}}/#about">ABOUT</a>
+                <a class="navbar-item" href="{{site.url}}/#contact">CONTACT</a>
+
+                <!-- Blog Dropdown -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="{{ '/blog' | relative_url }}">BLOG</a>
+                    <div class="navbar-dropdown has-background-black">
+                        {% assign recent_posts = site.blog | slice: 0,5 %}
+                        {% for post in recent_posts %}
+                        <a href="{{ post.url | relative_url }}" class="navbar-item">
+                            {{ post.title }}
+                        </a>
+                        {% endfor %}
+                        <hr class="navbar-divider">
+                        <a href="{{ '/blog' | relative_url }}" class="navbar-item">…</a>
+                    </div>
+                </div>
+
+                <!-- Projects Dropdown -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="{{ '/projects' | relative_url }}">PROJECTS</a>
+                    <div class="navbar-dropdown has-background-black">
+                        {% assign recent_projects = site.projects | slice: 0,5 %}
+                        {% for project in recent_projects %}
+                        <a href="{{ project.url | relative_url }}" class="navbar-item">
+                            {{ project.title }}
+                        </a>
+                        {% endfor %}
+                        <hr class="navbar-divider">
+                        <a href="{{ '/projects' | relative_url }}" class="navbar-item">…</a>
+                    </div>
+                </div>
+
+                <!-- More Dropdown -->
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">MORE</a>
+                    <div class="navbar-dropdown has-background-black">
+                        {% for sitepage in site.html_pages %}
+                        {% unless sitepage.url == '/' or sitepage.url == '/404/' or sitepage.url contains 'blog' or
+                        sitepage.url contains 'projects' %}
+                        <a href="{{ sitepage.url | relative_url }}" class="navbar-item">
+                            {{ sitepage.title }}
+                        </a>
+                        {% endunless %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</nav>

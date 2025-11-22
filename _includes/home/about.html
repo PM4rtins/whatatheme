@@ -1,0 +1,59 @@
+<!--
+    About section - Includes author foto, an about the author colum and an about
+    the website column.
+
+    Links to posts, blog and home contact section.
+-->
+
+<section class="hero has-text-white" id="about">
+    
+    <div class="container">
+        <div class="columns">
+
+            <div class="column is-one-fifth">
+                <figure class="image" id="author-column">
+                    <img class="is-rounded" src="{{site.data.home.about.author.image | relative_url}}">
+                </figure>
+            </div>
+
+            <div class="column no-top is-two-fifths">
+                <h3 class="ttl3-underline">{{site.data.home.about.author.heading}}</h3>
+                <p class="has-margin-right">{{site.data.home.about.author.long}}</p>
+                <div class="columns">
+                    <div class="column is-half is-centered">
+                        <a class="as-button is-focusable is-frosted has-shadow-normal is-hoverable invert enlarge-child-text" href="{{ '/#contact' | relative_url }}">
+                            <span>
+                                <p>Contact Me</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column no-top border-left is-two-fifths">
+                <h3 class="ttl3-underline">{{site.data.home.about.website.heading}}</h3>
+                <p class="has-margin-left">{{site.data.home.about.website.long}}</p>
+
+                <div class="columns">
+
+                    <div class="column is-half is-centered">
+                        <a class="as-button is-focusable is-frosted has-shadow-normal is-hoverable invert enlarge-child-text" href="{{ '/blog' | relative_url}}">
+                            <span> 
+                                <p>Blog</p>
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <div class="column is-half is-centered">
+                        <a class="as-button is-focusable is-frosted has-shadow-normal is-hoverable invert enlarge-child-text" href="{{ '/projects' | relative_url}}">
+                            <span>
+                                <p>Projects</p>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

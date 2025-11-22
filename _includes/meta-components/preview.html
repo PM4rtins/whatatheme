@@ -1,0 +1,11 @@
+<!--
+    Open Graph tags - Social previews for sharing and embedding. 
+ -->
+<meta property="og:title" content="{{site.title}}{% if page.title %} | {{page.title}}{% endif %}">
+<meta property="og:description"
+    content="{% unless page.layout == 'post' %}{{site.description}}{% else %}{{page.description}}{% endunless %}">
+<meta property="og:image"
+    content="{% unless page.layout == 'post' %}{{site.site-image}}{% else %}{{page.post-image}}{% endunless %}">
+<meta property="og:url" content="{{site.url}}{{site.baseurl}}{{page.url}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{site.title}}">

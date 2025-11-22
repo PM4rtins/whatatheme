@@ -1,0 +1,47 @@
+// Search Section
+#search {
+
+    input {
+        border: none;
+        outline: none;
+        font-weight: 500 !important; // input emphasis
+
+        &::placeholder {
+            font-weight: 500;
+            color: grey;
+        }
+    }
+
+    .btn {
+        fill: white;
+
+        transition: all 0.25s ease; // smooth focus effects
+
+        &:focus {
+            outline: 0.1rem solid white; // visual focus indicator
+        }
+    }
+
+    #results-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 400px;
+        background: black;
+        border: 0.15rem dashed white;
+        z-index: 9999;
+
+        .search-result {
+            padding: 0.75rem;
+            border-bottom: 1px solid grey;
+
+            h1 {
+                color: white;
+            }
+
+            .content {
+                color: #bbb;
+            }
+        }
+    }
+}

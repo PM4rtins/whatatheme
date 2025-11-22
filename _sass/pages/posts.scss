@@ -1,0 +1,161 @@
+:root {
+    --nav-height: 3rem;
+    --fixture-height: 0px;
+}
+
+#blog-post {
+
+    .no-top {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    #content,
+    .column.is-half:first-child {
+        margin-top: 6.8rem;
+    }
+
+    .sticky {
+        top: 7.8rem;
+        gap: 1rem;
+    }
+
+    #fixture {
+        background-color: black;
+        margin-bottom: auto;
+        margin-top: 0;
+
+        .has-text-link {
+            font-weight: 600; 
+        }
+
+        #author {
+            text-align: right;
+        }
+
+        #description {
+            margin: 1.5rem;
+            font-style: italic;
+            text-align: justify;
+        }
+
+        #tags {
+            text-align: left;
+            font-weight: 400 !important;
+        }
+
+        #wordcount {
+            text-align: left;
+            
+        }
+    }
+
+    #slideshow {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background-color: #000;
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 450ms ease;
+            will-change: opacity;
+            margin: 1rem auto 1rem auto;
+
+            &.current {
+                opacity: 1;
+                z-index: 2;
+            }
+
+            img {
+                border: 2px solid white;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+                display: block;
+            }
+
+            figcaption {
+                position: absolute;
+                bottom: 0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+    }
+
+    #content {
+        text-align: justify;
+
+        figure {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            margin: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                display: block;
+            }
+
+            figcaption {
+                position: absolute;
+                bottom: 0.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                color: #fff;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+
+        hr {
+            border-color: #fff;
+            margin: 1.5rem 0;
+        }
+
+        p {
+            margin: 1rem 1.5rem auto;
+            line-height: 1.6;
+        }
+    }
+
+    #quote{
+        margin: 0rem 3.5rem 1.5rem 3.5rem;
+
+        :first-child {
+            text-align: left;
+            
+        }
+        :nth-child(2) {
+            text-align: right;
+        }
+        
+    }
+
+    #references {
+        display: block;
+        padding-top: 1rem;
+        
+        ul {
+            margin-left: -2rem;
+        }
+        li {
+            margin: 0 0 0.6rem 0;
+            padding-left: 6rem;
+        }            
+    }
+}

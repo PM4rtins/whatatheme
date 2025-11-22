@@ -1,0 +1,31 @@
+---
+layout: blog-hub
+Name: Blog
+permalink: /blog
+---
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include components/head.html %}
+</head>
+
+<body>
+    
+    {% include components/navbar.html %}
+    {% include components/search.html %}
+    {% include sprites.svg %}
+    {% include blog/landing.html %}
+    {% include blog/scripts.html %}
+
+    <section id="contact-hubs">
+        {% include components/contact.html %}
+    </section>
+
+    {% include components/footer.html %}
+    {% include home/scripts.html %}
+
+</body>
+
+</html>
