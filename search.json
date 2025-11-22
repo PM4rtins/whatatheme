@@ -1,6 +1,17 @@
 ---
 layout: compress
 ---
+
+{%- comment -%}
+  Generates a JSON array of all site posts for client-side use.
+  Each object contains:
+    - title, tags, URL, date
+    - description and truncated content
+    - post image
+    - estimated reading time
+    Used for search, feeds, or other JS features.
+{%- endcomment -%}
+
 [
   {% for post in site.posts %}
     {
