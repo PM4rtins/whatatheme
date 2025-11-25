@@ -42,24 +42,14 @@
 */
 @mixin font-styler(
     
-    $type: null, 
     $size: null, 
     $weight: null, 
     $decoration: null, 
     $align: null,
-    $capitalize: false
+    $capitalize: false,
+    $line-height: null
 
     ) {
-
-    @if $type !=null {
-        @if $type =='title' {
-            @extend .title;
-        }
-
-        @else if $type =='subtitle' {
-            @extend .subtitle;
-        }
-    }
 
     @if $size !=null {
         @extend .#{'is-size-' + $size};
@@ -79,6 +69,10 @@
 
     @if $capitalize == true {
         text-transform: uppercase;
+    }
+
+    @if $line-height != null {
+        line-height: $line-height;
     }
 
     // Always ensure color is applied

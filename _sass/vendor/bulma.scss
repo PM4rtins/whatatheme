@@ -576,38 +576,6 @@ table th {
     overflow: hidden 
 }
 
-/*
-    Class overrides for each of the size variables 
-
-.is-size-1 {
-    font-size: 3rem 
-}
-
-.is-size-2 {
-    font-size: 2.5rem 
-}
-
-.is-size-3 {
-    font-size: 2rem 
-}
-
-.is-size-4 {
-    font-size: 1.5rem 
-}
-
-.is-size-5 {
-    font-size: 1.25rem 
-}
-
-.is-size-6 {
-    font-size: 1rem 
-}
-
-.is-size-7 {
-    font-size: .75rem 
-}
-*/
-
 .is-size-1 {
     font-size: 3rem
 }
@@ -11975,6 +11943,7 @@ print {
     }
 }
 
+/*
 .hero.is-fullheight .hero-body,
 .hero.is-fullheight-with-navbar .hero-body,
 .hero.is-halfheight .hero-body {
@@ -11988,6 +11957,7 @@ print {
     flex-grow: 1;
     flex-shrink: 1
 }
+*/
 
 .hero.is-halfheight {
     min-height: 50vh

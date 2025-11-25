@@ -3,22 +3,19 @@
 // Contact Sections
 #contact,
 #contact-hubs {
-    
-    align-items: center;
-    
+
+    position: relative;
+  
     hr {
         background-color: $default-black;
+        margin: 0 
     }
 
+    .columns {
+        margin: 0 auto;
+    }
     #contact-button-email {
         margin-bottom: .75rem;
     }
-}
-
-#contact-hubs {
-
-    margin-top: -7.5rem;
-    padding: 0 1.5rem 0 1.5rem;
-    
 }
 

@@ -2,56 +2,65 @@
     Contact section -includes call-to-action message, social links and means of 
     contact.
 -->
+<div class="hero has-text-black">
+    <div class="hero-body no-bottom">
+        <div class="container">
+            <div class="columns ">
 
-<div class="hero-body container has-text-black">
-    <div class="columns">
+                <!-- Call to Action-->
+                <div class="column no-top is-two-fifths">
+                    <h3 class="ttl3-underline">Get in touch</h3>
+                    <p class="text-box-normal head-space ">{{ site.data.home.contact.message }}</p>
+                </div>
 
-        <!-- Call to Action-->
-        <div class="column no-top is-two-fifths">
-            <h3 class="ttl3-underline">Get in touch</h3>
-            <p class="text-box-normal">{{ site.data.home.contact.message }}</p>
-        </div>
+                <!-- Social Links -->
+                <div class="column no-top is-one-fifth">
+                    <h3 class="ttl3-underline">
+                        Find me here
+                    </h3>
+                    <div class="container">
 
-        <!-- Social Links -->
-        <div class="column no-top is-one-fifth">
-            <h3 class="ttl3-underline">
-                Find me here
-            </h3>
-            <div class="container">
-                
-                <a class = "is-hoverable enlarge-child-icon" href="https://linkedin.com/in/{{ site.data.home.contacts.social.linkedin}}" target="_blank">
-                    <svg class="fabs icon">
-                        <use href="#linkedin-icon"></use>
-                    </svg>
-                </a>
-                <a class = "is-hoverable enlarge-child-icon" href="https://github.com/{{ site.data.home.contacts.social.github}}" target="_blank">
-                    <svg class="fabs icon">
-                        <use href="#github-icon"></use>
-                    </svg>
-                </a>
-                <a class = "is-hoverable enlarge-child-icon" href="https://x.com/intent/user?screen_name={{ site.data.home.contacts.social.x}}" target="_blank">
-                    <svg class="fabs icon">
-                        <use href="#x-icon"></use>
-                    </svg>
-                </a>
+                        <a class="is-hoverable enlarge-child-icon"
+                            href="https://linkedin.com/in/{{ site.data.home.contacts.social.linkedin}}" target="_blank">
+                            <svg class="fabs icon">
+                                <use href="#linkedin-icon"></use>
+                            </svg>
+                        </a>
+                        <a class="is-hoverable enlarge-child-icon"
+                            href="https://github.com/{{ site.data.home.contacts.social.github}}" target="_blank">
+                            <svg class="fabs icon">
+                                <use href="#github-icon"></use>
+                            </svg>
+                        </a>
+                        <a class="is-hoverable enlarge-child-icon"
+                            href="https://x.com/intent/user?screen_name={{ site.data.home.contacts.social.x}}"
+                            target="_blank">
+                            <svg class="fabs icon">
+                                <use href="#x-icon"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Means of Contact -->
+                <div class="column no-bot is-two-fifths">
+                    <a class="as-button has-shadow-none is-frosted is-hoverable invert enlarge-child-icon enlarge-child-text"
+                        id="contact-button-email" href="mailto:{{ site.email }}" class="btn" target="_blank">
+                        <svg class="fabs icon">
+                            <use href="#email-icon"></use>
+                        </svg>
+                        <p> Send me an Email</p>
+                    </a>
+                    <a class="as-button has-shadow-none is-frosted is-hoverable invert enlarge-child-icon enlarge-child-text"
+                        id="contact-button-cv" href="mailto:{{ site.email }}" class="btn" target="_blank">
+                        <svg class="fabs icon">
+                            <use href="#cv-icon"></use>
+                        </svg>
+                        <p> Request a CV</p>
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <!-- Means of Contact -->
-        <div class="column no-bot is-two-fifths">
-            <a class = "as-button has-shadow-none is-frosted is-hoverable invert enlarge-child-icon enlarge-child-text" id="contact-button-email" href="mailto:{{ site.email }}" class="btn" target="_blank">
-                <svg class="fabs icon">
-                    <use href="#email-icon"></use>
-                </svg>
-                <p> Send me an Email</p>
-            </a> 
-            <a class = "as-button has-shadow-none is-frosted is-hoverable invert enlarge-child-icon enlarge-child-text" id="contact-button-cv" href="mailto:{{ site.email }}" class="btn" target="_blank">
-                <svg class="fabs icon">
-                    <use href="#cv-icon"></use>
-                </svg>
-                <p> Request a CV</p>
-            </a>
+            <hr>
         </div>
     </div>
-    <hr>
 </div>

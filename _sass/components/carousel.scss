@@ -1,13 +1,13 @@
 .carousel {
     
-    padding-bottom: 65px;
-    margin: 25px auto 35px auto;
-    overflow: hidden;
-    z-index: 1;
+    position:relative;
+    overflow-x: hidden;
 
-    width: 95%;
-    height: 465px;
-    
+    .card-content {
+        height: 200px;
+        overflow-y: scroll;
+    }
+
     .slider-pagination {
         z-index: 10;
     }

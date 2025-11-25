@@ -2,7 +2,6 @@
 ---
 
 <section class="has-background-black has-text-white" id="blog-post">
-
     <div class="container">
         <div class="columns is-white">
             <div class="column is-half">
@@ -89,18 +88,19 @@
                     <img src="{{page.image | relative_url}}" alt="{{post.title}}" id="post-image">
                 </figure>
                 <hr class="is-white">
-                
+
                 <div id="quote">
-                <p>
-                    <em>{{ page.quote}}</em>
-                </p>
-                <p>
-                    <em><strong> {{page.quote-author}}</strong></em>
-                </p>
+                    <p>
+                        <em>{{ page.quote}}</em>
+                    </p>
+                    <p>
+                        <em><strong> {{page.quote-author}}</strong></em>
+                    </p>
                 </div>
                 <p>
                     {{ content }}
                 </p>
             </div>
         </div>
+    </div>
 </section>

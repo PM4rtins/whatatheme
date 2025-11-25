@@ -15,11 +15,11 @@
  *              the visibility of its corresponding menu, while deactivating
  *              the other button and menu.
  */
-const listBtn = document.querySelector('.dropdwn-btn.list-view');
-const cardBtn = document.querySelector('.dropdwn-btn.card-view');
+const listBtn = document.querySelector('.radio-button.list-view');
+const cardBtn = document.querySelector('.radio-button.card-view');
 
-const listMenu = document.querySelector('.dropdwn-menu.list-view-menu');
-const cardMenu = document.querySelector('.dropdwn-menu.card-view-menu');
+const listMenu = document.querySelector('.dropdwn.list-view');
+const cardMenu = document.querySelector('.dropdwn.card-view');
 
 listBtn.addEventListener('click', () => {
     const active = listBtn.classList.contains('is-active');

@@ -4,13 +4,15 @@
 @charset 'utf-8';
 @use 'vendor/bulma';
 @use 'vendor/bulma-carousel';
-@use 'base/reset';
 @use 'abstracts/mixins';
 @use 'abstracts/variables';
 @use 'abstracts/utilities';
+@use 'base/reset';
 @use 'base/fonts';
 @use 'base/typography';
 @use 'components/buttons';
+@use 'components/cards';
+@use 'components/menus';
 @use 'components/icons';
 @use 'components/anchors';
 @use 'components/carousel';
@@ -21,8 +23,6 @@
 @use 'layout/navbar';
 @use 'layout/navigation';
 @use 'layout/search';
-@use 'pages/blog';
 @use 'pages/landing';
 @use 'pages/not-found';
 @use 'pages/posts';
-@use 'pages/projects';

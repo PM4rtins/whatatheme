@@ -34,20 +34,25 @@ $fonts: (
     (900, italic, '#{$typeface}-BlackItalic.ttf')
 );
 
-// List of heading options (element, class, type, weight, decoration, align)
+$title-line-height-small: 1.125;
+$title-line-height-normal: 1.25;
+$title-line-height-extra: 1.5;
+
+// List of heading options:
+//    (element, class, type, weight, decoration, align, line-height)
 $headings: (
-    (h1, ttl1, title, 1, bold, underline, centered, true),
-    (h3, ttl3, title, 3, normal, null, centered, true),
-    (h3, ttl3-underline, title, 3, semibold, underline, centered, true),
-    (h4, ttl4, title, 6, normal, null, centered, true)
+    (h1, ttl1, 1, semibold, underline, centered, true, $title-line-height-normal),
+    (h3, ttl3, 3, normal, null, centered, true, $title-line-height-normal),
+    (h3, ttl3-underline, 3, semibold, underline, centered, true, $title-line-height-extra),
+    (h4, ttl4, 5, semibold, null, centered, true, $title-line-height-normal)
 );
 
 // List of text options (element, class, type, weight, decoration, align)
 $text-variants: (
-    (p, button-text-large, null, 3, semibold, none, centered, true),
-    (p, button-text-normal, null, 6, semibold, none, centered, true),
-    (p, text-box-normal, null, 6, normal, none, justified, false),
-    (p, nav-text, null, 5, normal, none, justified, false),
+    (p, button-text-large, 3, semibold, none, centered, true, null),
+    (p, button-text-normal, 6, semibold, none, centered, true, null),
+    (p, text-box-normal, 6, normal, none, justified, false, null),
+    (p, nav-text, 5, normal, none, justified, false, null),
 );
 
 // Base color definitions
@@ -89,7 +94,7 @@ $box-shadow-large: (
     shadow-offset-y: 3px,
     shadow-size: 35px,
     shadow: $base-shadow,
-    press-depth: 3px,
+    press-depth: 5px,
 );
 
 $box-shadow-none: (

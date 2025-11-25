@@ -3,10 +3,57 @@
 /// This stylesheet is concerned with defining the general layout options of 
 /// page elements. 
 
+/* BORROWED FROM BULMA */
+body {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5
+}
+
+.hero {
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-body {
+    
+    padding: 3rem 1.5rem;
+    
+    &.extra-padding {
+        padding: 5rem 1.5rem;
+    }
+
+    &.no-bottom {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    &.no-margin {
+        margin:0;
+        padding:0;
+    }
+
+    &.flex-to-bottom {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+/* BORROWED FROM BULMA */
+
 .container {
-    flex-grow: 1;
     position: relative;
-    width: auto
+
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    width: auto;
+    
+    &.centered {
+        align-self: center;
+    }
 }
 
 .column {
@@ -16,6 +63,11 @@
     &.no-top {
         margin-top: 0;
         padding-top: 0;
+    }
+    
+    &.no-bottom {
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     &.border-left {
@@ -40,57 +92,3 @@
         justify-content: center;
     }
 }
-
- .grid-container {
-    @extend .container;
-
-    flex-wrap: wrap;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    
-    height: 100vh;
-
-    .grid-cell {
-        @extend .column;
-        height: 50vh;
-
-        &.top {
-            display: flex;
-            align-items: start;
-            justify-content: center;
-        }
-
-        &.centered {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &.centered-right {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        &.bottom-center {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 1rem;
-        }
-
-        &.bottom-right {
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-end;
-            text-align: right;
-            padding: 0.5rem;
-        }
-
-        &.black-overlay {
-            background-color: rgba(0, 0, 0, 0.65);
-            color: white;
-        }
-    }
- }

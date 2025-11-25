@@ -5,7 +5,17 @@
 ///
 @use 'abstracts/variables' as *;
 
-// Reset the values of several Bulma classes using variables defined in variables.
+// Reset the values of several Bulma classes, other resets such as style for
+// particular elements are found in the respective partial.
+
+
+body {
+    color: inherit;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5
+}
+
 .has-text-white {
     color: $default-white;
 }
@@ -21,14 +31,15 @@
 .has-text-link {
     color: $link-blue;
 }
+
 .is-link {
     background-color: $highlight-purple;
 }
 
 .button.is-focused,
 .button:focus {
-    border-color: none;
-    color: none;
+    border-color: currentColor;
+    color: currentColor;
 
     &.focus-light {
         border-color: $default-white

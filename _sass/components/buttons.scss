@@ -35,70 +35,64 @@
 
 }
 
-// Compound Button module with Two Buttons
-.info-box {
-    .button-group {
+// radio-style toggle buttons 
+.radio-box {
 
-        // Grid TK - review this
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        overflow: visible;
+    // Layout: horizontal flex container
+    display: flex;
+    position: relative; // for absolute positioning of internal elements if needed
+    justify-content: space-between; // evenly space buttons
+    align-items: center; // vertical alignment
+    overflow: visible; // allow dropdowns or shadows to overflow
 
-        // Layout
-        width: 80%;
-        padding: 1rem 1.5rem;
-        border-radius: 3rem;
+    // Sizing and spacing
+    width: 100%; // container width
+    padding: 1rem 1.5rem; // internal spacing
+    border-radius: 3rem; // rounded container edges
 
-        // Appearance
-        background-color: rgba(0, 0, 0, 0.65);
-        border: solid 0.1rem currentColor;
+    // Appearance
+    background-color: rgba(0, 0, 0, 0.65); // semi-transparent dark background
+    border: solid 0.1rem currentColor; // thin border
 
-        /* TK this is a page variant of the class, generate it by adding its 
-        mixin
+    // Controller wrapper for buttons
+    .controller {
 
-        .subttl3 {
-            font-weight: 425 !important;
-            margin: auto;
-            margin: auto auto;
-        }
-        */
+        // Individual toggle buttons
+        .radio-button {
 
-        /* TK this is likely a p element that should be defined in the 
-        at page level
-        .description {
-            flex: 1;
-            font-size: 1.75em;
-            font-weight: semi-bold;
-        }
-                */
-
-        .btn {
-            // Layout
-            padding: 0.5rem 1rem;
-
-            // Styling
+            // Button appearance
             background-color: white;
-            color: color-mix(in srgb,
-                    currentColor 80%,
-                    white 20%);
+            color: color-mix(in srgb, currentColor 80%, white 20%); // blended text color
+            border: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1;
+            opacity: 1;
 
-            &.is-active {
-                background: #fff7dc;
-                color: rgb(151, 170, 174);
+
+            // Rounded edges for first button (left side)
+            &:first-child {
+                border-top-left-radius: 1rem;
+                border-bottom-left-radius: 1rem;
             }
-        }
 
-        &:first-child {
-            border-top-left-radius: 1rem;
-            border-bottom-left-radius: 1rem;
-        }
+            // Rounded edges for second button (right side) and left border
+            &:nth-child(2) {
+                border-top-right-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                border-left: 1px solid black;
+            }
 
-        &:nth-child(2) {
-            border-top-right-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-            border-left: 1px solid black;
+            // Active state styling
+            &.is-active {
+                background: #fff7dc; // highlight background
+                color: rgb(151, 170, 174); // text color for active
+                box-shadow:
+                    inset -1px -1px 2px rgba(255, 255, 255, 0.6),
+                    inset 2px 2px 2px rgba(0, 0, 0, 0.3); // inner shading
+                transform: translateY(2px); // subtle pressed effect
+            }
         }
     }
 }

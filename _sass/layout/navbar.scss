@@ -3,6 +3,7 @@
     opacity: 1;
     background-color: black;
     border-bottom: 1px solid #e4dfd0;
+ 
 
     .navbar-dropdown {
         border: none;
@@ -33,6 +34,10 @@
         background-color: #fff;
         position: relative;
         top: 64px;
+    }
+
+    a{
+        color: currentColor;
     }
 }
 

@@ -23,24 +23,25 @@ body {
 
     $h, 
     $cls, 
-    $type, 
     $size, 
     $weight, 
     $decoration, 
     $align, 
-    $capitalize 
+    $capitalize,
+    $line-height
     
 in var.$headings {
 
     #{$h}.#{$cls} {
         @include mix.font-styler(
-            
-            $type, 
+        
             $size, 
             $weight, 
             $decoration, 
             $align, 
-            $capitalize
+            $capitalize,
+            $line-height
+            
         );
     }
 }
@@ -48,7 +49,6 @@ in var.$headings {
 // Style line-items
 li {
     color: currentColor;
-    font-weight: bold;
     font-size: 1.1rem;
 
     &::before{
@@ -67,40 +67,54 @@ li {
     }
 }
 
-// Style paragraphs
+// Style paragraph elements
+@each $h,
+
+    $cls,
+    $size,
+    $weight,
+    $decoration,
+    $align,
+    $capitalize,
+    $line-height 
+
+in var.$text-variants {
+
+    #{$h}.#{$cls} {
+        @include mix.font-styler(
+
+            $size,
+            $weight,
+            $decoration,
+            $align,
+            $capitalize,
+            $line-height
+            
+        );
+    }
+}
+
 p {
     text-align: justify;
+    
+    &.head-space {
+        margin-top: 1rem;
+    } 
 
     &.has-margin-left {
-            margin-left: 1rem;
-        }
-    
+        margin-left: 1rem;
+    }
+
     &.has-margin-right {
         margin-right: 1rem;
     }
 }
 
-// Stylr paragraph elements
-@each $h,
-$cls,
-$type,
-$size,
-$weight,
-$decoration,
-$align,
-$capitalize in var.$text-variants {
-
-    #{$h}.#{$cls} {
-        @include mix.font-styler($type,
-            $size,
-            $weight,
-            $decoration,
-            $align,
-            $capitalize );
-    }
-}
-
 hr {
-    border: 1px;
-    color: currentColor !important;
+    color: currentColor;
+    background-color: currentColor;
+    border: none;
+    display: block;
+    height: 2px;
+    margin: 1.5rem 0
 }

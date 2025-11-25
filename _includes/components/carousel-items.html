@@ -1,0 +1,15 @@
+{% for item in site[include.type] %}
+<div class="card {% if forloop.first %}is-active{% endif %} is-hoverable special glow-up ">
+    <a href="{{ item.url}}" class="card-link ">
+        <div class="card-image">
+            <figure class="img>">
+                <img src="{{ item.image }}" alt="Slide {{ forloop.index }}">
+            </figure>
+        </div>
+        <div class="card-content scrollable">
+            <p class="nav-text">{{ item.title }}</p>
+            <p class="content">{{ item.description }}</p>
+        </div>
+    </a>
+</div>
+{% endfor %}

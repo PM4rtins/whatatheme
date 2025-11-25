@@ -10,14 +10,17 @@
 a {
 
     cursor: pointer;
+    color: currentColor;
     text-decoration: none;
-    
-    &.as-link {
-        color: var.$link-blue;
-    }
 
     &.as-button {
         @extend .btn;
+    }
+
+    &.as-credits {
+        text-decoration: underline;
+        font-weight: bold;
+        color: var.$highlight-purple;
     }
 }
 

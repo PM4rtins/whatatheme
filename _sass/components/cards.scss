@@ -1,65 +1,55 @@
+// Card element used in card-view dropdown
 
+/* 
+
+Bulma styling for the card element
 
 .card {
-    display: block;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: #dbdbd7bb;
-    border-radius: 0.5rem;
-    border: solid 2px black;
-    padding: 1rem;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+    color: #4a4a4a;
+    max-width: 100%;
+    position: relative
+}
+    
+*/
 
-    box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.2);
+.card {
 
+    display: flex; // use flex layout for content
+    flex-direction: column; // stack children vertically
+    position: relative; // relative for z-index adjustments on hover
+    background: #dbdbd7bb; // semi-transparent gray background
+    border-radius: 0.5rem; // rounded corners
+    border: solid 2px black; // black border around card
+    margin: 0.5rem;
+    padding: 0.5rem; // inner spacing
+
+    // Shadow for depth
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+    // Inherit text styles, remove underline
     text-decoration: none;
     color: inherit;
-    transition: box-shadow 0.3s ease,
-        border-color 0.3s ease,
-        transform 0.3s ease,
-        opacity 0.3s ease;
-    background: 0.3 ease;
 
+    // Image inside card
     img {
-        width: 100%;
-        border-radius: 0.25rem;
+        width: 100%; // full width of card
+        border-radius: 0.25rem; // slightly rounded corners
     }
 
+    // Card title
     h3 {
-        margin: 0.5rem 0 0.25rem;
+        margin: 0.5rem 0 0.25rem; // spacing above and below
         color: white;
-
     }
 
+    // Card description / text
     p {
         font-size: 0.9rem;
         color: white;
     }
 
-    &:hover {
-        background: #fffdea;
-        box-shadow: 0 0 10px 2.5px #b9f0ff;
-        border-color: #f5f4f0;
-        transform: scale(1.02);
-        opacity: 1;
-        z-index: 50;
 
-        p {
-            color: black;
-            transition: color 1.2s ease;
-        }
-
-        h3 {
-            color: black;
-            font-weight: semibold;
-            transition: all 1.2s ease;
-        }
-
-        img {
-            transform: scale(1.07);
-            transition: transform 0.3s ease;
-        }
-
-    }
 }

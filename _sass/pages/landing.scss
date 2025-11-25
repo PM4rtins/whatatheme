@@ -6,35 +6,11 @@
  
 */
 
-#home {
-    position: relative;
-    padding: 0 0 3rem 0;
-
-    .hero-body {
-        align-items: flex-end;
-        justify-content: center;
-        
-        .container {
-            margin-bottom: -2.5rem;
-        }
-    }
-
-    h1, h3 {
-        margin-bottom: 0.5rem;
-    }
-
-    a {
-        color: currentColor;
-    }
-}
-
 // About Section
 #about {
-
+    
     position: relative;
     scroll-margin-top: 10vh;
-
-    padding: 25px 0px 0px 0px;
     border-top: 2px solid #fff;
 
     background-size: 100% 200%;
@@ -46,7 +22,6 @@
 
     .container {
         align-self: center;
-        margin: 3rem 3rem;
     }
 
     a {
@@ -59,24 +34,21 @@
 #showcase {
     
     position: relative;
-    overflow: hidden;
-
-    padding: 50px 75px;
+    
     border-top: 2px solid #fff;
     border-bottom: 2px solid #000;
-
-    .columns {
-        justify-content: center;
-    }
 
     .column {
         display: block;
         align-content: center;
-        margin: 75px auto 25px auto;
     }
 
     >*:not(.bg) {
         z-index: 1;
+    }
+
+    #showcase-description {
+        text-align: center;
     }
 
     &.carousel1-active,
@@ -141,19 +113,11 @@
         }
     }
 
-    .slider-pagination {
-        background-color: white !important;
-    }
-
-    .slider-container .slider-item {
-        height: auto;
-    }
-
     .slider-container .slider-item img {
         object-fit: scale-down;
     }
 
-    .card-content p {
-        margin: initial;
+    .slider-pagination {
+        background-color: white !important;
     }
 }

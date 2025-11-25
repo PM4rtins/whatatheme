@@ -1,46 +1,31 @@
-<section class="hero is-fullheight has-text-white has-text-centered" id="project-hub">
-    <div class="bg fullwidth"></div>
-    <div class="hero-body">
+<section class="hero is-fullheight-with-navbar has-text-white" id="project-hub">
+    <div class="bg fullwidth parallax"></div>
+    <div class="hero-body flex-to-bottom">
         <div class="container">
-            <div class="columns is-multiline is-gapless grid-container">
-                <div class="column is-one-third grid-cell top">
-                </div>
-                <div class="column is-one-third grid-cell"></div>
-                <div class="column is-one-third grid-cell has-text-centered"></div>
-                <div class="column is-one-third grid-cell centered">
-                    <h3 class="subttl3">
-                        ... like stars, ideas have a light of their own 
+            <div class="columns ">
+                <div class="column is-two-fifths">
+                    <h3 class="ttl3">
+                        ... like stars, ideas have a light of their own
                     </h3>
                 </div>
-                <div class="column is-two-thirds grid-cell centered-right">
-                    <div class="info-box">
-                        <h3 class="subttl3">Projects</h3>
-                        <div class="button-group">
-                            <button class="dropdwn-btn list-view">List View</button>
-                            <button class="dropdwn-btn card-view">Card View</button>
-
-                            <div class="dropdwn-menu list-view-menu">
-                                {% for project in site.projects %}
-                                <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-                                {% endfor %}
-                            </div>
-
-                            <div class="dropdwn-menu card-view-menu">
-                                {% for project in site.projects %}
-                                <a href="{{ project.url | relative_url }}" class="card">
-                                    <img src="{{ project.image }}" alt="{{ project.title }}">
-                                    <div class="card-content">
-                                        <h3>{{ project.title }}</h3>
-                                        <p>{{ project.description | truncate: 100 }}</p>
-                                    </div>
-                                </a>
-                                {% endfor %}
-                            </div>
+                <div class="column is-three-fifths">
+                    <div class="radio-box">
+                        <h3 class="ttl3 column is-half no-top no-bottom">
+                            My projects
+                        </h3>
+                        <div class="controller">
+                            <button class="radio-button list-view is-hoverable is-iced has-shadow-large">List
+                                View</button>
+                            <button class="radio-button card-view is-hoverable is-iced has-shadow-large">Card
+                                View</button>
                         </div>
+
+                        {% assign content_type = "projects" %}
+                        {% include components/dropdown-items.html type=content_type %}
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
