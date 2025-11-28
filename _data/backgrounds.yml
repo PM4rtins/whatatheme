@@ -1,0 +1,11 @@
+home:
+  hero: "{{ site.data.landing.home.image }}"
+  showcase:
+    projects: "{{ site.data.home.showcase.projects.image }}"
+    blog: "{{ site.data.home.showcase.blog.image }}"
+
+project_hub:
+  hero: "{{ site.data.landing.projects.image }}"
+
+blog_hub:
+  hero: "{{ site.data.landing.blog.image }}"

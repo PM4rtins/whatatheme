@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
     bulmaCarousel.attach('.carousel', {
         slidesToScroll: 1,
         slidesToShow: 3,
+        pagination: 1,
         navigation: true,
-        loop: true,
-        infinite: true,
+        loop: false,
+        infinite: false,
     });
 });

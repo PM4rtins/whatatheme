@@ -1,22 +1,103 @@
+@use 'abstracts/variables' as var;
+@use 'components/buttons' as *;
+@use 'abstracts/utilities' as *;
+
 .carousel {
-    
-    position:relative;
+
+    position: relative;
     overflow-x: hidden;
+
+    hr {
+        margin: 0 auto 0.15rem auto;
+        width: 80%;
+    }
+
+    .card {
+        color: black;
+        height: 500px;
+        overflow-y: hidden;
+    }
 
     .card-content {
         height: 200px;
         overflow-y: scroll;
+
     }
 
-    .slider-pagination {
-        z-index: 10;
-    }
-    
     &.hidden {
         display: none;
     }
 
     &:not(.hidden) {
         display: block;
+    }
+
+    .slider-pagination {
+        background:
+            linear-gradient(to bottom,
+                rgba(227, 224, 214, 0.80),
+                /* base sand */
+                rgba(208, 203, 188, 0.80)
+                /* slightly darker */
+            ),
+            linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.05),
+                rgba(0, 0, 0, 0.1));
+
+        @extend .btn;
+        height: 32px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        border-radius: 0.75rem;
+        border: 2px solid black;
+
+        .slider-page {
+            @extend .is-hoverable, .invert;
+        }
+
+        pointer-events: none;
+    }
+
+    .slider-navigation-next {
+
+        right: 45%;
+        top: 100%;
+        width: 32px;
+        height: 32px;
+        border: 2px solid black;
+        border-radius: 0.75rem;
+        background:
+            linear-gradient(to bottom,
+                rgba(227, 224, 214, 0.80),
+                /* base sand */
+                rgba(208, 203, 188, 0.80)
+                /* slightly darker */
+            ),
+            linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.80),
+                rgba(0, 0, 0, 0.1));
+    }
+
+    .slider-navigation-previous {
+
+        left: 45%;
+        top: 100%;
+        width: 32px;
+        height: 32px;
+        background:
+            linear-gradient(to bottom,
+                rgba(227, 224, 214, 0.80),
+                /* base sand */
+                rgba(208, 203, 188, 0.80)
+                /* slightly darker */
+            ),
+            linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.05),
+                rgba(0, 0, 0, 0.1));
+
+        border-radius: 0.75rem;
+        border: 2px solid black;
+
     }
 }

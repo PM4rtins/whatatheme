@@ -1,11 +1,12 @@
 ---
 ---
 
-<section class="has-background-black has-text-white" id="blog-post">
+<section class="hero has-background-black has-text-white" id="blog-post">
+    <div class="hero-body no-margin"></div>
     <div class="container">
         <div class="columns is-white">
-            <div class="column is-half">
-                <div class="rows">
+            <div class="column sticky is-half">
+                <div class="rows ">
                     <div class="row" id="fixture">
                         <div class="column">
                             <a href="{{page.url | relative_url}}" class="is-white" id="title">
@@ -69,7 +70,7 @@
                     </div>
                     <hr>
                     <div class="row" id="references">
-                        <p class="nav-text has-text-weight-bold">References:</p>
+                        <p class="nav-text">References:</p>
                         <ul>
                             {% for ref in page.references %}
                             <li style="line-height: 1.4;">

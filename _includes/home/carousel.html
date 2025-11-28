@@ -6,13 +6,16 @@
 <section class="hero has-text-white has-text-centered" id="showcase">
 
     <!-- Backgrounds -->
-    <div class="bg bg1 boxed parallax" id="bg1"></div>
-    <div class="bg bg2 boxed parallax" id="bg2"></div>
+    {% assign this-bg = "showcase-1" %}
+    {% include components/background-images.html image-key=this-bg %}
 
-    <div class="hero-body extra-padding">
+    {% assign this-bg = "showcase-2" %}
+    {% include components/background-images.html image-key=this-bg %}
+
+    <div class="hero-body no-bottom">
         <div class="container">
-            <div class="columns">
 
+            <div class="columns">
                 <!-- Title and message -->
                 <div class="column black-bg is-three-fifths">
                     <h3 class="ttl3">
@@ -32,21 +35,26 @@
             </div>
 
             <!-- Carousel 1-->
-            <div class="carousel" id="carousel1">
+            <div class="hero">
+                <div class="hero-body no-top carousel" id="carousel1">
 
-                <!-- Reads collection data from .yml file-->
-                {% assign content_type = "projects" %}
-                {% include components/carousel-items.html type=content_type %}
+                    <!-- Reads collection data from .yml file-->
+                    {% assign content_type = "projects" %}
+                    {% assign card_variant = "blue" %}
+                    {% include components/carousel-items.html type=content_type variant=card_variant %}
 
+                </div>
+
+
+                <!-- Carousel 2-->
+                <div class="hero-body no-top carousel" id="carousel2">
+
+                    <!-- Reads collection data from .yml file-->
+                    {% assign content_type = "blog" %}
+                    {% assign card_variant = "red" %}
+                    {% include components/carousel-items.html type=content_type variant=card_variant %}
+
+                </div>
             </div>
-
-            <!-- Carousel 2-->
-            <div class="carousel" id="carousel2">
-
-                <!-- Reads collection data from .yml file-->
-                {% assign content_type = "blog" %}
-                {% include components/carousel-items.html type=content_type %}
-
         </div>
-    </div>
 </section>

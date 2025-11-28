@@ -16,7 +16,6 @@
         border: none;
     }
 
-    // TK is-frosted
 }
 
 // Toggle Button
@@ -25,14 +24,14 @@
     @extend .btn;
 
     // Dimensions
-    width: 225px;
-    height: 100px;
+    width: 250px;
+    height: 3.5rem;
 
     // Styling
     color: var.$default-white;
-    border-radius: 20px; // overrides is-rounded
-    border: 2px solid #fff;
-
+    border-radius: 3rem; // overrides is-rounded
+    border: 2px solid #ffffff37;
+    
 }
 
 // radio-style toggle buttons 
@@ -61,7 +60,6 @@
         .radio-button {
 
             // Button appearance
-            background-color: white;
             color: color-mix(in srgb, currentColor 80%, white 20%); // blended text color
             border: none;
             padding: 0.5rem 1rem;

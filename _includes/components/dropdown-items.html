@@ -1,12 +1,12 @@
 <div class="dropdwn list-view">
     {% for post in site[include.type] %}
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <a class="anchor is-hoverable glow-up" href="{{ post.url | relative_url }}"  >{{ post.title }}</a>
     {% endfor %}
 </div>
 
 <div class="dropdwn card-view">
     {% for post in site[include.type] %}
-    <a href="{{ post.url | relative_url }}" class="crd is-hoverable glow-up">
+    <a href="{{ post.url | relative_url }}" class="card in-menu is-hoverable glow-up">
         <img src="{{ post.image }}" alt="{{ post.title }}">
         <div class="card-content">
             <h3>{{ post.title }}</h3>

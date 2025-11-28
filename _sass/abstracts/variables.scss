@@ -44,15 +44,17 @@ $headings: (
     (h1, ttl1, 1, semibold, underline, centered, true, $title-line-height-normal),
     (h3, ttl3, 3, normal, null, centered, true, $title-line-height-normal),
     (h3, ttl3-underline, 3, semibold, underline, centered, true, $title-line-height-extra),
-    (h4, ttl4, 5, semibold, null, centered, true, $title-line-height-normal)
+    (h4, ttl4, 5, semibold, null, centered, true, $title-line-height-normal),
+    (h4, card-ttl,4, semibold, null, centered, true, $title-line-height-small)
 );
 
 // List of text options (element, class, type, weight, decoration, align)
 $text-variants: (
-    (p, button-text-large, 3, semibold, none, centered, true, null),
+    (p, button-text-large, 3, light, none, centered, true, null),
     (p, button-text-normal, 6, semibold, none, centered, true, null),
     (p, text-box-normal, 6, normal, none, justified, false, null),
     (p, nav-text, 5, normal, none, justified, false, null),
+    (p, card-text, 5, light, none, justified, false, $title-line-height-extra)
 );
 
 // Base color definitions

@@ -3,8 +3,12 @@
   striking title and description, and a "Find out more" scroll button.
 -->
 
+
 <section class="hero is-fullheight has-text-white has-text-centered" id="home">
-  <div class="bg parallax"></div>
+
+  {% assign this-bg = "home" %}
+  {% include components/background-images.html image-key=this-bg %}
+
   <div class="hero-body flex-to-bottom">
     <div class="container">
       <h1 class="ttl1">

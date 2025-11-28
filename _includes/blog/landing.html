@@ -1,5 +1,8 @@
 <section class="hero is-fullheight-with-navbar has-text-white has-text-centered" id="blog-hub">
-    <div class="bg fullwidth parallax"></div>
+    
+    {% assign this-bg = "blog-hub" %}
+    {% include components/background-images.html image-key=this-bg %}
+
     <div class="hero-body flex-to-bottom">
         <div class="container">
             <div class="columns">

@@ -2,45 +2,8 @@
 ---
 /*  
 
-        This file serves as the central entry point for all project style 
-    sheets. It is also handles any Scss calls that require Liquid Injection.  
+    This file serves as the central entry point for all project style sheets.
 
 */
 
 @use 'main' as *;
-
-
-// Backgrounds for main website pages.
-
-// Homepage Hero
-#home {
-    .bg {
-        background-image: url("{{ site.data.landing.home.image }}");
-    }
-}
-
-// Homepage project/blog carousel
-#showcase {
-    .bg1 {
-        background-image: url("{{ site.data.home.showcase.projects.image }}");
-    }
-
-    .bg2 {
-        background-image: url("{{ site.data.home.showcase.blog.image }}");
-    }
-}
-
-// Projects-Hub 
-#project-hub {
-    .bg {
-        background-image: url("{{ site.data.landing.projects.image }}");
-    }
-}
-
-// Blog-Hub
-#blog-hub {
-    .bg {
-        background-image: url("{{ site.data.landing.blog.image }}");
-
-    }
-}

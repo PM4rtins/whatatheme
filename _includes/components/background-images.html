@@ -1,0 +1,28 @@
+{% assign this_bg = include.image-key %}
+{% assign style = "" %}
+{% assign id = "" %}
+
+{% case this_bg %}
+
+  {% when "home" %}
+    {% assign bg_url = site.data.landing.home.image %}
+
+  {% when "showcase-1" %}
+    {% assign bg_url = site.data.home.showcase.projects.image %}
+    {% assign style = "boxed" %}
+    {% assign id = "id = 'bg1'" %}
+
+  {% when "showcase-2" %}
+    {% assign bg_url = site.data.home.showcase.blog.image %}
+    {% assign style = "boxed" %}
+    {% assign id = "id = 'bg2'" %}
+  
+    {% when "project-hub" %}
+    {% assign bg_url = site.data.landing.projects.image %}
+
+  {% when "blog-hub" %}
+    {% assign bg_url = site.data.landing.blog.image %}
+    
+{% endcase %}
+
+<div class="bg {{ style }} parallax" style="background-image: url('{{ bg_url }}');" {{id}} ></div>

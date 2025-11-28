@@ -1,0 +1,10 @@
+
+FIX
+
+	Cards:
+		Create styles for both Blog and projects
+		distinct from the ones in their respective hubs.
+
+		Set the approapriate font for each of the cards
+
+→&Ø→ 

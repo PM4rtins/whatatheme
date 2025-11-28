@@ -18,8 +18,7 @@
     &:hover {
         // On hover
 
-        &.crd.glow-up {
-
+        &.glow-up.card {
             // Smooth transition for visual changes on hover
             transition:
                 box-shadow 0.3s ease,
@@ -27,7 +26,7 @@
                 transform 0.3s ease,
                 opacity 0.3s ease;
             background: 0.3 ease;
-
+            
             // Hover effects
             background: #fffdea; // light background on hover
             box-shadow: 0 0 10px 2.5px #b9f0ff; // glow effect
@@ -47,31 +46,24 @@
                 font-weight: semibold;
                 transition: all 1.2s ease;
             }
-
-            // Image zoom effect
-            img {
-                transform: scale(1.07);
-                transition: transform 0.3s ease;
-            }
         }
 
-        &.list-view.glow-up {
-            a {
-                // Hover effects for list items
-                opacity: 1;
-                font-weight: semibold;
-                color: black !important;
-                border-radius: 20px;
-                background: #fffdea;
-                box-shadow: 0 0 10px 2.5px #b9f0ff;
-                border-color: #f5f4f0;
-                transform: scale(1.02); // slight zoom
-                transition: all 0.6s ease; // smooth hover transition
-                }
+        &.glow-up.anchor {
+
+            // Hover effects for list items
+            opacity: 1;
+            font-weight: semibold;
+            color: black !important;
+            background: #fffdea;
+            box-shadow: 0 0 10px 2.5px #b9f0ff;
+            border-color: #f5f4f0;
+            border-radius: 0.5rem;
+            transition: all 1.5s ease; // smooth hover transition
+
         }
 
-        &.special.glow-up {
-    
+        &.glow-up.carousel {
+
             // Smooth transition for visual changes on hover
             transition:
                 box-shadow 0.3s ease,
@@ -79,7 +71,7 @@
                 transform 0.3s ease,
                 opacity 0.3s ease;
             background: 0.3 ease;
-    
+            
             // Hover effects
             background: #fffdea; // light background on hover
             box-shadow: 0 0 10px 2.5px #b9f0ff; // glow effect
@@ -87,13 +79,13 @@
             transform: scale(1.02); // slight zoom
             opacity: 1; // ensure fully visible
             z-index: 50; // bring above other elements
-    
+
             // Text color transitions
             p {
                 color: black;
                 transition: color 1.2s ease;
             }
-    
+
             h3 {
                 color: black;
                 font-weight: semibold;
@@ -148,19 +140,19 @@ $frostable-elements: a, button;
 @each $el in $frostable-elements {
 
     #{$el}.is-iced {
-        color: currentColor !important;
+        color: currentColor;
         backdrop-filter: blur(2px);
         background: linear-gradient(to bottom,
                 rgba(255, 247, 220, 0.709),
-                rgba(117, 117, 117, 0.6)) !important;
+                rgba(117, 117, 117, 0.6));
     }
 
     #{$el}.is-frosted {
-        color: currentColor !important;
+        color: currentColor;
         backdrop-filter: blur(2px);
         background: linear-gradient(to bottom,
                 rgba(255, 255, 255, 0.05),
-                rgba(0, 0, 0, 0.1)) !important;
+                rgba(0, 0, 0, 0.1));
     }
 }
 
