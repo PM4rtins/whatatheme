@@ -2,87 +2,76 @@
 ---
 
 <section class="hero has-background-black has-text-white" id="blog-post">
-    <div class="hero-body no-margin"></div>
-    <div class="container">
-        <div class="columns is-white">
-            <div class="column sticky is-half">
-                <div class="rows ">
-                    <div class="row" id="fixture">
-                        <div class="column">
-                            <a href="{{page.url | relative_url}}" class="is-white" id="title">
-                                <h1 class="ttl1">
-                                    {{page.title}}
-                                </h1>
-                            </a>
-                            <hr class="is-white">
-                            <div class="columns">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-white">
+                <div class="column sticky is-half no-top">
+                    <div class="columns" style="display: block">
+                        <div class="column is-50vh" id="fixture">
+                            <div class="column">
+                                <a href="{{page.url | relative_url}}" class="is-white" id="title">
+                                    <h1 class="ttl1">
+                                        {{page.title}}
+                                    </h1>
+                                </a>
+                                <hr class="is-white">
+                                <div class="columns">
 
-                                <div class="column">
-                                    <h5 id="description" class="subttl5 content">
-                                        {{page.description | strip | strip_html | strip_newlines }}
-                                    </h5>
+                                    <div class="column">
+                                        <h5 id="description" class="subttl5 content">
+                                            {{page.description | strip | strip_html | strip_newlines }}
+                                        </h5>
 
-                                    <p id="author" class="subttl5">
-                                        Published on
-                                        <b>
-                                            {{ page.date | date: "%-B %d, %Y" }}
-                                        </b><br>
-                                        by <a href="{{site.author-url}}" target="_blank">
+                                        <p id="author" class="subttl5">
+                                            Published on
+                                            <b>
+                                                {{ page.date | date: "%-B %d, %Y" }}
+                                            </b><br>
+                                            by <a href="{{site.author-url}}" target="_blank">
+                                                <b class="has-text-link">
+                                                    <u>
+                                                        Naboseta {{site.author-name}}
+                                                    </u>
+                                                </b>
+                                            </a>
+                                        </p>
+                                        {% assign words = content | number_of_words %}
+                                        <p id="wordcount" class="subtitle ttl5">
+                                            <svg class="fabs icon" style="fill: white">
+                                                <use href="#readtime-icon" x="0" y="2"></use>
+                                            </svg>
                                             <b class="has-text-link">
-                                                <u>
-                                                    Naboseta {{site.author-name}}
-                                                </u>
-                                            </b>
-                                        </a>
-                                    </p>
-                                    {% assign words = content | number_of_words %}
-                                    <p id="wordcount" class="subtitle ttl5">
-                                        <svg class="fabs icon" style="fill: white">
-                                            <use href="#readtime-icon" x="0" y="2"></use>
-                                        </svg>
-                                        <b class="has-text-link">
-                                            {{ words | divided_by:180 }} min
-                                        </b>READ
-                                    </p>
+                                                {{ words | divided_by:180 }} min
+                                            </b>READ
+                                        </p>
 
-                                    {%- assign tags = page.tags -%}
-                                    <p id="tags" class="subtitle ttl5">
-                                        <svg class="fabs icon" style="fill: white">
-                                            <use href="#tags-icon" x="0" y="5"></use>
-                                        </svg>
-                                        {% assign i = 0 %}
-                                        {% for tags in page.tags %}
-                                        <span class="tag is-link">{{page.tags[i]}}</span>
-                                        {% assign i = i | plus:1 %}
-                                        {% endfor %}
-                                    </p>
+                                        {%- assign tags = page.tags -%}
+                                        <p id="tags" class="subtitle ttl5">
+                                            <svg class="fabs icon" style="fill: white">
+                                                <use href="#tags-icon" x="0" y="5"></use>
+                                            </svg>
+                                            {% assign i = 0 %}
+                                            {% for tags in page.tags %}
+                                            <span class="tag is-link">{{page.tags[i]}}</span>
+                                            {% assign i = i | plus:1 %}
+                                            {% endfor %}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row" id="slideshow">
-                        {% for slide in page.slideshow %}
-                        <figure class="slide{% if forloop.first %} current{% endif %}" data-target="{{ slide.posY }}">
-                            <figcaption>{{ slide.legend }}</figcaption>
-                            <img src="{{ slide.path | relative_url }}" alt="{{ slide.name }}">
-                        </figure>
-                        {% endfor %}
-                    </div>
-                    <hr>
-                    <div class="row" id="references">
-                        <p class="nav-text">References:</p>
-                        <ul>
-                            {% for ref in page.references %}
-                            <li style="line-height: 1.4;">
-                                {% if ref.author %}<strong>{{ ref.author }}</strong>{% endif %}
-                                {% if ref.paper %}, <em>{{ ref.paper }}</em>{% endif %}
-                                {% if ref.year %}, {{ ref.year }}{% endif %}
-                            </li>
+                        <div class="column is-40vh" id="slideshow">
+                            {% for slide in page.slideshow %}
+                            <figure class="slide{% if forloop.first %} current{% endif %}"
+                                data-target="{{ slide.posY }}">
+                                <figcaption>{{ slide.legend }}</figcaption>
+                                <img src="{{ slide.path | relative_url }}" alt="{{ slide.name }}">
+                            </figure>
                             {% endfor %}
-                        </ul>
+                        </div>
+                        <hr>
                     </div>
                 </div>
-            </div>
             <div class="column is-half" id="content">
                 <figure>
                     <figcaption>{{ page.image-legend }}</figcaption>
@@ -103,5 +92,21 @@
                 </p>
             </div>
         </div>
+        <div class="columns">
+            <div class="column is-half">
+                <p class="nav-text">References:</p>
+                <ul>
+                    {% for ref in page.references %}
+                    <li style="line-height: 1.4; padding-left: 5rem;">
+                        {% if ref.author %}<strong>{{ ref.author }}</strong>{% endif %}
+                        {% if ref.paper %}, <em>{{ ref.paper }}</em>{% endif %}
+                        {% if ref.year %}, {{ ref.year }}{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="column is-half"></div>
+        </div>
+    </div>
     </div>
 </section>

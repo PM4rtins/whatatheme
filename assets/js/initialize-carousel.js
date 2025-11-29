@@ -15,9 +15,17 @@
  *              options such as slidesToScroll, slidesToShow, navigation, loop, and infinite.
  */
 document.addEventListener('DOMContentLoaded', () => {
+    let slidesToScroll = 3;
+    let slidesToShow = 3;
+
+    if (document.body.classList.contains('is-hidden-tablet')) { 
+        slidesToScroll = 1;
+        slidesToShow = 1;
+    }
+
     bulmaCarousel.attach('.carousel', {
-        slidesToScroll: 1,
-        slidesToShow: 3,
+        slidesToScroll: slidesToScroll,
+        slidesToShow: slidesToShow,
         pagination: 1,
         navigation: true,
         loop: false,

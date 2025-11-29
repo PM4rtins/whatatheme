@@ -3,7 +3,38 @@
     {% assign this-bg = "project-hub" %}
     {% include components/background-images.html image-key=this-bg %}
 
-    <div class="hero-body flex-to-bottom">
+    <!-- desktop view -->
+    <div class="hero-body flex-to-bottom is-hidden-mobile">
+        <div class="container">
+            <div class="columns ">
+                <div class="column is-two-fifths">
+                    <h3 class="ttl3">
+                        ... like stars, ideas have a light of their own
+                    </h3>
+                </div>
+                <div class="column is-three-fifths">
+                    <div class="radio-box">
+                        <h3 class="ttl3 column is-half no-top no-bottom">
+                            My projects
+                        </h3>
+                        <div class="controller">
+                            <button class="radio-button list-view is-hoverable is-iced has-shadow-large">List
+                                View</button>
+                            <button class="radio-button card-view is-hoverable is-iced has-shadow-large">Card
+                                View</button>
+                        </div>
+    
+                        {% assign content_type = "projects" %}
+                        {% include components/dropdown-items.html type=content_type %}
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- mobile view -->
+    <div class="hero-body is-hidden-tablet">
         <div class="container">
             <div class="columns ">
                 <div class="column is-two-fifths">

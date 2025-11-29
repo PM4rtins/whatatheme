@@ -4,29 +4,12 @@
 }
 
 #blog-post {
-
-    .no-top {
-        margin-top: 0;
-        padding-top: 0;
-    }
-
-    #content,
-    .column.is-half:first-child {
-        margin-top: 6.8rem;
-    }
-
-    .sticky {
-        top: 7.8rem;
-        gap: 1rem;
-    }
-
+    
     #fixture {
         background-color: black;
-        margin-bottom: auto;
-        margin-top: 0;
-
+        
         .has-text-link {
-            font-weight: 600; 
+            font-weight: 600;
         }
 
         #author {
@@ -46,7 +29,7 @@
 
         #wordcount {
             text-align: left;
-            
+
         }
     }
 
@@ -132,29 +115,31 @@
         }
     }
 
-    #quote{
+    #quote {
         margin: 0rem 3.5rem 1.5rem 3.5rem;
 
         :first-child {
             text-align: left;
-            
+
         }
+
         :nth-child(2) {
             text-align: right;
         }
-        
+
     }
 
     #references {
         display: block;
         padding-top: 1rem;
-        
+
         ul {
             margin-left: -2rem;
         }
+
         li {
             margin: 0 0 0.6rem 0;
             padding-left: 6rem;
-        }            
+        }
     }
 }

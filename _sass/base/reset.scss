@@ -48,3 +48,19 @@ body {
         color: $default-black
     }
 }
+
+/// These classes need to be override due to the classes introduced to several
+/// elements.
+
+@media screen and (max-width:768px) {
+    .is-hidden-mobile {
+        display: none !important
+    }
+}
+
+@media screen and (min-width:769px),
+print {
+    .is-hidden-tablet {
+        display: none !important
+    }
+}

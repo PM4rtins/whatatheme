@@ -1,9 +1,9 @@
 <section class="hero is-fullheight-with-navbar has-text-white has-text-centered" id="blog-hub">
-    
+
     {% assign this-bg = "blog-hub" %}
     {% include components/background-images.html image-key=this-bg %}
 
-    <div class="hero-body flex-to-bottom">
+    <div class="hero-body flex-to-bottom is-hidden-mobile">
         <div class="container">
             <div class="columns">
                 <div class="column is-two-fifths">
@@ -31,4 +31,34 @@
             </div>
         </div>
     </div>
+
+    <div class="hero-body is-hidden-tablet">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-fifths">
+                    <h3 class="ttl3">
+                        ... step forth into the light of things
+                    </h3>
+                </div>
+                <div class="column is-three-fifths">
+                    <div class="radio-box">
+                        <h3 class="ttl3 column is-half no-top no-bottom">
+                            Blog entries
+                        </h3>
+                        <div class="controller">
+                            <button class="radio-button list-view is-hoverable is-iced has-shadow-normal">List
+                                View</button>
+                            <button class="radio-button card-view is-hoverable is-iced has-shadow-normal">Card
+                                View</button>
+                        </div>
+
+                        {% assign content_type = "blog" %}
+                        {% include components/dropdown-items.html type=content_type %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
